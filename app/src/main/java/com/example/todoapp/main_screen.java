@@ -32,8 +32,6 @@ public class main_screen extends AppCompatActivity {
         String email= getIntent().getStringExtra("Email");
         String registerUsername = getIntent().getStringExtra("Username");
 
-        binding.txtMail.setText(email);
-
         sharedPrefManager = new sharedPreferences(this);
 
         // Load saved to-do items
@@ -47,23 +45,9 @@ public class main_screen extends AppCompatActivity {
         binding.todoitemlistview.setAdapter(listAdapter);
         binding.todoitemlistview.setClickable(false);
 
+        
 
-        binding.imgAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAddItemDialog();
-            }
-        });
-
-        binding.imgDevinfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(main_screen.this,DevInfo.class);
-                startActivity(intent);
-            }
-        });
-
-        binding.imgUserinfo.setOnClickListener(new View.OnClickListener() {
+        binding.btnUserinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(main_screen.this,UserInfo.class);

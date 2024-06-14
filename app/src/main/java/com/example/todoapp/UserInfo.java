@@ -33,19 +33,34 @@ public class UserInfo extends AppCompatActivity {
          email= getIntent().getStringExtra("Email");
          registerUsername = getIntent().getStringExtra("Username");
 
-        binding.txtEmailup.setText(email);
-        binding.txtUsername.setText("User name : "+registerUsername);
-        binding.txtEmail.setText("Email : "+email);
+        binding.textemailUp.setText(email);
+        binding.textUsername.setText("User name : "+registerUsername);
+        binding.textemail.setText("Email : "+email);
 
 
-        binding.btnlogOut.setOnClickListener(new View.OnClickListener() {
+//        binding.imgAdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                showAddItemDialog();
+//            }
+//        });
+
+        binding.btnDeveloperinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(UserInfo.this,DevInfo.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showLogoutDialog();
             }
         });
 
-        binding.btnEditInfo.setOnClickListener(new View.OnClickListener() {
+        binding.btnEditinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showEditInfoDialog();
@@ -126,9 +141,9 @@ public class UserInfo extends AppCompatActivity {
                             editor.putString("Email", newEmail);
                             editor.apply();
 
-                            binding.txtUsername.setText("User name: " + newUsername);
-                            binding.txtEmail.setText("Email: " + newEmail);
-                            binding.txtEmailup.setText(newEmail);
+                            binding.textUsername.setText("User name: " + newUsername);
+                            binding.textemail.setText("Email: " + newEmail);
+                            binding.textemailUp.setText(newEmail);
 
                             Toast.makeText(UserInfo.this, "Info updated successfully", Toast.LENGTH_SHORT).show();
                         } else {
