@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#333F3E"
+    android:background="#0972C6"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_rectangle"
         android:hint="User name"
+        android:textStyle="bold"
         android:inputType="text"
         android:padding="10dp"
         android:textColor="#333F3E"
@@ -25,6 +26,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/rounded_rectangle"
         android:hint="Email"
+        android:textStyle="bold"
         android:inputType="text"
         android:padding="10dp"
         android:textColor="#333F3E"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DevInfo">
+    tools:context=".UserInfo">
 
     <ImageView
         android:id="@+id/imageView8"
@@ -53,7 +53,7 @@
 
         <LinearLayout
             android:layout_width="343dp"
-            android:layout_height="525dp"
+            android:layout_height="485dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:background="@drawable/button_background"
@@ -109,7 +109,7 @@
                 android:layout_width="272dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="192dp"
+                android:layout_marginTop="145dp"
                 android:text="developer info" />
 
             <Button

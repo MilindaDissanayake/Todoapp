@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.todoapp.databinding.ActivityMainScreenBinding;
+import com.example.todoapp.databinding.ActivityUserInfoBinding;
 
 import java.util.ArrayList;
 
@@ -23,13 +24,21 @@ public class main_screen extends AppCompatActivity {
 
     sharedPreferences sharedPrefManager;
 
+    String email;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String email= getIntent().getStringExtra("Email");
+        email= getIntent().getStringExtra("Email");
+
+        binding.textemailUp.setText(email);
+
+
+            String email= getIntent().getStringExtra("Email");
         String registerUsername = getIntent().getStringExtra("Username");
 
         sharedPrefManager = new sharedPreferences(this);

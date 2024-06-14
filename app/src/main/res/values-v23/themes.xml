@@ -2,8 +2,8 @@
   <!-- Base application theme. -->
   <style name="Base.Theme.ToDoApp" parent="Theme.Material3.DayNight.NoActionBar">
     <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-    <item name="android:statusBarColor">@color/darckBack</item>
-    <item name="android:navigationBarColor">@color/darckBack</item>
+    <item name="android:statusBarColor">#FDF8FE</item>
+    <item name="android:navigationBarColor">#FDF8FE</item>
   </style>
 
   <style name="Theme.ToDoApp" parent="Base.Theme.ToDoApp" />
