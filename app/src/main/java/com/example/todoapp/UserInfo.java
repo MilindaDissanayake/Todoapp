@@ -36,14 +36,7 @@ public class UserInfo extends AppCompatActivity {
         binding.textemailUp.setText(email);
         binding.textUsername.setText("User name : "+registerUsername);
         binding.textemail.setText("Email : "+email);
-
-
-//        binding.imgAdd.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showAddItemDialog();
-//            }
-//        });
+        
 
         binding.btnDeveloperinfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +61,7 @@ public class UserInfo extends AppCompatActivity {
         });
     }
 
+    //show the user details
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -79,6 +73,7 @@ public class UserInfo extends AppCompatActivity {
 
     }
 
+    //log out alert massage
     private void showLogoutDialog() {
         // Create an AlertDialog builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.CustomAlertDialog);
@@ -112,6 +107,7 @@ public class UserInfo extends AppCompatActivity {
         dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setBackground(getResources().getDrawable(R.drawable.rounded_rectangle));
     }
 
+    //update new data and show massages
     private void showEditInfoDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomAlertDialog);
 
@@ -135,12 +131,14 @@ public class UserInfo extends AppCompatActivity {
                             registerUsername = newUsername;
                             email = newEmail;
 
+                            //retrive old value
                             SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString("Username", newUsername);
                             editor.putString("Email", newEmail);
                             editor.apply();
 
+                            //new value update
                             binding.textUsername.setText("User name: " + newUsername);
                             binding.textemail.setText("Email: " + newEmail);
                             binding.textemailUp.setText(newEmail);

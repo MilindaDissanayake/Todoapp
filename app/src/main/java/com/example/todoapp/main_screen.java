@@ -20,6 +20,8 @@ public class main_screen extends AppCompatActivity {
 
     ActivityMainScreenBinding binding;
     listAdapter listAdapter;
+
+    //for hold to do item
     ArrayList<todoData> dataArrayList = new ArrayList<>();
 
     sharedPreferences sharedPrefManager;
@@ -33,6 +35,7 @@ public class main_screen extends AppCompatActivity {
         binding = ActivityMainScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //display email bellow image
         email= getIntent().getStringExtra("Email");
 
         binding.textemailUp.setText(email);
@@ -43,7 +46,7 @@ public class main_screen extends AppCompatActivity {
 
         sharedPrefManager = new sharedPreferences(this);
 
-        // Load saved to-do items
+        // Load saved to-do items for retrive
         ArrayList<String> savedItems = sharedPrefManager.getTodoList();
         for (String item : savedItems) {
             todoData todoData = new todoData(item, R.drawable.edit, R.drawable.delete);
@@ -54,6 +57,8 @@ public class main_screen extends AppCompatActivity {
         binding.todoitemlistview.setAdapter(listAdapter);
         binding.todoitemlistview.setClickable(false);
 
+
+        //set up add itim
         binding.btnNewTaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +68,7 @@ public class main_screen extends AppCompatActivity {
 
 
 
+        //navigate user info
         binding.btnUserinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
