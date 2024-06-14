@@ -38,7 +38,7 @@ public class main_screen extends AppCompatActivity {
         binding.textemailUp.setText(email);
 
 
-            String email= getIntent().getStringExtra("Email");
+        String email= getIntent().getStringExtra("Email");
         String registerUsername = getIntent().getStringExtra("Username");
 
         sharedPrefManager = new sharedPreferences(this);
@@ -53,6 +53,13 @@ public class main_screen extends AppCompatActivity {
         listAdapter = new listAdapter(main_screen.this,dataArrayList);
         binding.todoitemlistview.setAdapter(listAdapter);
         binding.todoitemlistview.setClickable(false);
+
+        binding.btnNewTaskButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAddItemDialog();
+            }
+        });
 
 
 
