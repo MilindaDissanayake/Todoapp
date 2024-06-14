@@ -14,23 +14,22 @@ import android.widget.Toast;
 
 public class loginScreen extends AppCompatActivity {
 
-    TextView createOne;
-    EditText enter_email;
-    EditText password;
-    Button login;
+    TextView Signup;
+    EditText Email;
+    EditText Password;
+    Button Login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
 
-        createOne=findViewById(R.id.textcreateone);
-        enter_email =findViewById(R.id.editTextemail);
-        password =findViewById(R.id.editTextpw);
-        login = findViewById(R.id.btnlogin);
+        Signup=findViewById(R.id.textSignup);
+        Email =findViewById(R.id.editTextEmail);
+        Password =findViewById(R.id.editTextPw);
+        Login = findViewById(R.id.Login);
 
-
-        createOne.setOnClickListener(new View.OnClickListener() {
+        Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(loginScreen.this,signUpScreen.class);
@@ -39,12 +38,13 @@ public class loginScreen extends AppCompatActivity {
             }
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
+
+        Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String email = enter_email.getText().toString();
-                String pass = password.getText().toString();
+                String email = Email.getText().toString();
+                String pass = Password.getText().toString();
 
                 if (email.isEmpty() || pass.isEmpty()) {
                     Toast.makeText(loginScreen.this, "All fields are required", Toast.LENGTH_SHORT).show();
@@ -73,5 +73,6 @@ public class loginScreen extends AppCompatActivity {
 
             }
         });
+
     }
 }
