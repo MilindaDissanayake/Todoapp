@@ -45,7 +45,7 @@ public class main_screen extends AppCompatActivity {
         binding.todoitemlistview.setAdapter(listAdapter);
         binding.todoitemlistview.setClickable(false);
 
-        
+
 
         binding.btnUserinfo.setOnClickListener(new View.OnClickListener() {
             @Override
