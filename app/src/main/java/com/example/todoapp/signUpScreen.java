@@ -15,20 +15,23 @@ import android.widget.Toast;
 public class signUpScreen extends AppCompatActivity {
 
     TextView login;
-    EditText userName,password,confirmPassword,email;
-    Button create;
+    EditText userName;
+    EditText password;
+    EditText confirmPassword;
+    EditText email;
+    Button signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_screen);
 
-        login=findViewById(R.id.textlogin);
+        login=findViewById(R.id.textLogin);
         userName=findViewById(R.id.editUserName);
         password=findViewById(R.id.editTextpw);
         confirmPassword=findViewById(R.id.editTextconfirmpw);
         email=findViewById(R.id.editTextemail);
-        create=findViewById(R.id.btnCreate);
+        signup=findViewById(R.id.SignUp);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +42,7 @@ public class signUpScreen extends AppCompatActivity {
             }
         });
 
-        create.setOnClickListener(new View.OnClickListener() {
+        signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String user = userName.getText().toString();
@@ -67,7 +70,7 @@ public class signUpScreen extends AppCompatActivity {
 
                 Toast.makeText(signUpScreen.this, "User registered successfully", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(signUpScreen.this, loginScreen.class);
+                Intent intent = new Intent(signUpScreen.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
