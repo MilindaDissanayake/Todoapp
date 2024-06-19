@@ -36,8 +36,9 @@ public class UserInfo extends AppCompatActivity {
         binding.textemailUp.setText(email);
         binding.textUsername.setText("User name : "+registerUsername);
         binding.textemail.setText("Email : "+email);
-        
 
+
+        //dev info
         binding.btnDeveloperinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +47,7 @@ public class UserInfo extends AppCompatActivity {
             }
         });
 
+        //log out
         binding.btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,7 +140,7 @@ public class UserInfo extends AppCompatActivity {
                             editor.putString("Email", newEmail);
                             editor.apply();
 
-                            //new value update
+                            //update new value
                             binding.textUsername.setText("User name: " + newUsername);
                             binding.textemail.setText("Email: " + newEmail);
                             binding.textemailUp.setText(newEmail);

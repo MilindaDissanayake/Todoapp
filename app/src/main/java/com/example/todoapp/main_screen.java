@@ -21,7 +21,7 @@ public class main_screen extends AppCompatActivity {
     ActivityMainScreenBinding binding;
     listAdapter listAdapter;
 
-    //for hold to do item
+    //for hold ToDo item
     ArrayList<todoData> dataArrayList = new ArrayList<>();
 
     sharedPreferences sharedPrefManager;
